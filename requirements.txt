@@ -1,0 +1,23 @@
+# Web framework and database (from remote)
+fastapi
+uvicorn[standard]
+asyncpg
+python-dotenv
+pydantic
+
+# Data processing and analysis (for sales/budget integration)
+pandas>=1.5.0
+psycopg2-binary>=2.9.0
+openpyxl>=3.0.0
+requests>=2.28.0
+python-dateutil>=2.8.0
+numpy>=1.24.0
+tqdm>=4.64.0
+
+# Optional: For advanced scheduling
+schedule>=1.2.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0
