@@ -54,3 +54,18 @@ Thumbs.db
 # Excel temporary files
 ~$*.xlsx
 ~$*.xls
+
+# Claude Code
+.claude/
+
+# JSON files with sensitive data
+*live*.json
+*successful*.json
+
+# More Python virtual env locations
+.venv/
+
+# Additional data files to ignore
+*.xlsx
+*.xls
+*.csv
