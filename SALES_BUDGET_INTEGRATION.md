@@ -95,14 +95,34 @@ The Excel file contains:
 ## Setup Instructions
 
 ### Prerequisites
-1. Python 3.8+ with pandas, psycopg2
-2. Access to Supabase database
-3. Excel file in the specified location
+1. Access to Supabase database
+2. Excel file: "Cascadia Daily Sales & Budget Data.xlsx"
+3. Optional: Python 3.8+ for automated import
 
-### 1. Database Setup
+### **OPTION 1: Manual Deployment (Recommended for Quick Start)**
+
+#### 1. Database Setup (5 minutes)
+1. **Open Supabase Dashboard** → SQL Editor
+2. **Run**: `deploy_to_supabase_manual.sql` (creates tables, views, mappings)
+3. **Run**: `insert_sample_data.sql` (adds sample data for testing)
+4. **Run**: `test_integration.sql` (verifies setup)
+
+#### 2. Deploy Supabase Function
+1. **Go to**: Edge Functions in Supabase Dashboard  
+2. **Create**: New function named `sales-budget-data`
+3. **Copy code** from: `supabase/functions/sales-budget-data/index.ts`
+4. **Deploy** the function
+
+#### 3. Test Dashboard
+- **Refresh dashboard** → Should show real budget vs actual variance
+- **Look for**: Budget values NOT equal to 110% of sales
+
+### **OPTION 2: Automated Python Setup**
+
+#### 1. Database Setup
 ```bash
-# Set your database connection string
-export DATABASE_URL="postgresql://postgres:[password]@[host]:5432/postgres"
+# Set your database connection string in .env file
+# DATABASE_URL="postgresql://postgres:[password]@[host]:5432/postgres"
 
 # Run the complete setup
 python setup_sales_budget_system.py
